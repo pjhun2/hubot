@@ -1,0 +1,27 @@
+{
+  "name": "bbot",
+  "version": "1.0.0",
+  "private": true,
+  "author": "buhot",
+  "description": "devops",
+  "dependencies": {
+    "@octokit/core": "^5.0.2",
+    "@slack/web-api": "^6.11.2",
+    "coffeescript": "^1.12.7",
+    "hubot": "^3.5.0",
+    "hubot-conversation": "^1.1.1",
+    "hubot-diagnostics": "^1.2.0",
+    "hubot-help": "^2.1.2",
+    "hubot-redis-brain": "^2.0.0",
+    "hubot-rules": "^1.0.0",
+    "hubot-slack": "^4.10.0",
+    "slack": "*"
+  },
+  "scripts": {
+    "start": "hubot -a slack",
+    "start:redis": "docker run -d --name redis-hubot -p 6379:6379 -p 8001:8001 -v redis-hubot:/data redis/redis-stack:latest redis-server --dir /data/redis/ --appendonly yes --protected-mode no"
+  },
+  "engines": {
+    "node": ">= 18.0.0"
+  }
+}
